@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity">
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/aboveBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        android:layout_centerHorizontal="true"
+        ads:adUnitId="ca-app-pub-7920815986886474/1122335161"/>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_below="@id/aboveBanner"
+        android:layout_above="@id/belowBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/belowBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adUnitId="ca-app-pub-7920815986886474/1122335161"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/resultBack"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_baseline_keyboard_backspace_24"
+        android:layout_above="@id/belowBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/resultShare"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_baseline_share_24"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/belowBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

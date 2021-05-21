@@ -21,13 +21,9 @@ import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.android.play.core.tasks.OnSuccessListener;
 import com.google.android.play.core.tasks.Task;
 
-import am.appwise.components.ni.NoInternetDialog;
-
 public class SplashActivity extends AppCompatActivity {
 
-    private static final int REQUEST_CODE = 5152;
-
-    NoInternetDialog noInternetDialog;
+    private static final int REQUEST_CODE = 11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +36,6 @@ public class SplashActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_splash);
-
-        noInternetDialog = new NoInternetDialog.Builder(SplashActivity.this).build();
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
@@ -81,11 +75,5 @@ public class SplashActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        noInternetDialog.onDestroy();
     }
 }

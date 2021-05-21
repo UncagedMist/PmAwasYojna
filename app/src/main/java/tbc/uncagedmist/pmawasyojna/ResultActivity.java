@@ -42,7 +42,6 @@ import com.shashank.sony.fancydialoglib.FancyAlertDialog;
 import com.shashank.sony.fancydialoglib.FancyAlertDialogListener;
 import com.shashank.sony.fancydialoglib.Icon;
 
-import am.appwise.components.ni.NoInternetDialog;
 import tbc.uncagedmist.pmawasyojna.Utility.CustomLoadDialog;
 import tbc.uncagedmist.pmawasyojna.Utility.CustomProgressDialog;
 
@@ -52,8 +51,6 @@ public class ResultActivity extends AppCompatActivity {
     WebView webView;
 
     AdView aboveBanner, bottomBanner;
-
-    NoInternetDialog noInternetDialog;
 
     CustomLoadDialog loadDialog;
     CustomProgressDialog progressDialog;
@@ -67,8 +64,6 @@ public class ResultActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_result);
-
-        noInternetDialog = new NoInternetDialog.Builder(ResultActivity.this).build();
 
         Intent intent = getIntent();
 
@@ -291,11 +286,6 @@ public class ResultActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onAdLeftApplication() {
-                // Code to be executed when the user has left the app.
-            }
-
-            @Override
             public void onAdClosed() {
                 // Code to be executed when the user is about to return
                 // to the app after tapping on an ad.
@@ -325,21 +315,10 @@ public class ResultActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onAdLeftApplication() {
-                // Code to be executed when the user has left the app.
-            }
-
-            @Override
             public void onAdClosed() {
                 // Code to be executed when the user is about to return
                 // to the app after tapping on an ad.
             }
         });
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        noInternetDialog.onDestroy();
     }
 }
